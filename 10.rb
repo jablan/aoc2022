@@ -7,7 +7,7 @@ c = 1
 @sum = 0
 @xpos = 1
 
-def click(c, x)
+def tick(c, x)
     # puts "xpos: #{@xpos}, x: #{x}"
     if @xpos >= x && @xpos < x + 3
         print '#'
@@ -30,13 +30,12 @@ input.each do |line|
     xi = 0
     case line
     when 'noop'
-        click(c, x)
+        tick(c, x)
         c += 1
-        # ci = 1
     when /addx (-?\d+)/
-        click(c, x)
+        tick(c, x)
         c += 1
-        click(c, x)
+        tick(c, x)
         c += 1
         x += $1.to_i
     end
